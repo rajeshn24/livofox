@@ -1,312 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PARQX | Premium Innerwear</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIVOFOX | Live Bold - Premium Apparel</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --card-bg: #161616;
+            --text-primary: #ffffff;
+            --text-secondary: #aaaaaa;
+            --accent-gold: #d4af37;
+            --accent-hover: #f3c653;
+            --border-color: #2a2a2a;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-<style>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Montserrat',sans-serif;
-}
+        /* Top Notification Bar */
+        .top-bar {
+            background-color: #000;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 8px 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-body{
-    background:#111;
-    color:#fff;
-}
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(11, 11, 11, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-/* Header */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-    position:absolute;
-    width:100%;
-    z-index:100;
-}
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: var(--text-primary);
+        }
 
-.logo{
-    font-size:38px;
-    letter-spacing:8px;
-    font-weight:600;
-}
+        .brand-tagline {
+            font-size: 0.65rem;
+            letter-spacing: 5px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:30px;
-    font-size:15px;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-/* Hero */
+        nav ul li a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-.hero{
-    height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    padding:0 8%;
-}
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
 
-.hero-content{
-    max-width:650px;
-}
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
 
-.hero h1{
-    font-size:80px;
-    letter-spacing:12px;
-    margin-bottom:20px;
-}
+        .nav-icons i:hover {
+            color: var(--accent-gold);
+        }
 
-.hero p{
-    font-size:20px;
-    line-height:1.8;
-    color:#ddd;
-}
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
 
-.tagline{
-    color:#d4af37;
-    font-weight:600;
-    margin-bottom:20px;
-}
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 6px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
 
-.btn{
-    display:inline-block;
-    margin-top:35px;
-    background:#fff;
-    color:#111;
-    padding:15px 35px;
-    text-decoration:none;
-    border-radius:40px;
-    font-weight:600;
-}
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px;
+        }
 
-/* Features */
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: var(--text-primary);
+            color: var(--bg-color);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-.features{
-    padding:100px 8%;
-    background:#161616;
-}
+        .btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--text-primary);
+        }
 
-.section-title{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:60px;
-}
+        /* Brand Pillars Bar */
+        .pillars {
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--card-bg);
+            padding: 25px 5%;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-.feature-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
+        .pillar-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
 
-.card{
-    background:#222;
-    padding:35px;
-    border-radius:15px;
-    text-align:center;
-}
+        .pillar-item i {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
 
-.card h3{
-    margin-bottom:15px;
-}
+        /* Section Header Styling */
+        .section-header {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
 
-.card p{
-    color:#bbb;
-}
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
 
-/* Products */
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
 
-.products{
-    padding:100px 8%;
-}
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 5% 80px;
+        }
 
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
+        .product-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
 
-.product{
-    background:#1c1c1c;
-    border-radius:15px;
-    overflow:hidden;
-}
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
 
-.product img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-}
+        .product-img {
+            height: 380px;
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-.product-info{
-    padding:25px;
-}
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.product-info h3{
-    margin-bottom:10px;
-}
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
-.price{
-    color:#d4af37;
-    font-size:22px;
-    font-weight:bold;
-}
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
 
-/* About */
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
 
-.about{
-    background:#161616;
-    padding:100px 8%;
-    text-align:center;
-}
+        .product-price {
+            color: var(--accent-gold);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
 
-.about p{
-    max-width:850px;
-    margin:auto;
-    line-height:1.8;
-    color:#ccc;
-}
+        .btn-outline {
+            display: inline-block;
+            padding: 10px 25px;
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--text-primary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
 
-/* Footer */
+        .btn-outline:hover {
+            background-color: var(--text-primary);
+            color: var(--bg-color);
+        }
 
-footer{
-    text-align:center;
-    padding:40px;
-    background:#0a0a0a;
-    color:#888;
-}
+        /* Brand Story Section */
+        .story-section {
+            background-color: var(--card-bg);
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
 
-</style>
+        .story-content {
+            flex: 1;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .story-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .story-quote {
+            font-style: italic;
+            color: var(--accent-gold);
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 15px;
+            margin: 25px 0;
+            font-weight: 500;
+        }
+
+        .story-image {
+            flex: 1;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 60px 5% 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85srem;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-col p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: var(--text-primary);
+            background-color: var(--card-bg);
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+        }
+
+        .footer-gstin {
+            margin-top: 5px;
+            color: var(--accent-gold);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .story-section {
+                flex-direction: column;
+                padding: 60px 5%;
+            }
+            .story-image {
+                width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">PARQX</div>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Collection</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <div class="hero-content">
-
-        <div class="tagline">
-            Italian Style • Indian Craftsmanship
-        </div>
-
-        <h1>PARQX</h1>
-
-        <p>
-            Premium innerwear designed for confidence,
-            comfort and performance.
-            Luxury-inspired styling crafted with
-            Indian excellence.
-        </p>
-
-        <a href="#" class="btn">Shop Collection</a>
-
-    </div>
-</section>
-
-<section class="features">
-
-    <h2 class="section-title">Why PARQX?</h2>
-
-    <div class="feature-grid">
-
-        <div class="card">
-            <h3>Soft Fabrics</h3>
-            <p>Ultra-soft premium cotton blends.</p>
-        </div>
-
-        <div class="card">
-            <h3>Perfect Fit</h3>
-            <p>Designed for all-day comfort.</p>
-        </div>
-
-        <div class="card">
-            <h3>Breathable</h3>
-            <p>Stay fresh throughout the day.</p>
-        </div>
-
-        <div class="card">
-            <h3>Durable</h3>
-            <p>Built for everyday performance.</p>
-        </div>
-
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        Free Shipping Across India | Designed in India for a Bolder Tomorrow
     </div>
 
-</section>
-
-<section class="products">
-
-    <h2 class="section-title">Featured Collection</h2>
-
-    <div class="product-grid">
-
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
-            <div class="product-info">
-                <h3>Classic Brief</h3>
-                <div class="price">₹499</div>
-            </div>
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo-container">
+            <span class="brand-name">LIVOFOX</span>
+            <span class="brand-tagline">Live Bold</span>
         </div>
-
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723">
-            <div class="product-info">
-                <h3>Premium Trunk</h3>
-                <div class="price">₹699</div>
-            </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#story">Brand Story</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass" title="Search"></i>
+            <i class="fa-solid fa-user" title="Account"></i>
+            <i class="fa-solid fa-bag-shopping" title="Cart"></i>
         </div>
+    </header>
 
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
-            <div class="product-info">
-                <h3>Luxury Boxer</h3>
-                <div class="price">₹799</div>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Wear Confidence</h1>
+        <p>More than apparel. A mindset. A community. Designed for people who value comfort, confidence, and simplicity.</p>
+        <a href="#collection" class="btn">Explore Collection</a>
+    </section>
+
+    <!-- Brand Pillars / Values Banner -->
+    <div class="pillars">
+        <div class="pillar-item">
+            <i class="fa-solid fa-gem"></i> Premium Quality
         </div>
-
+        <div class="pillar-item">
+            <i class="fa-solid fa-shield-halved"></i> Comfort Fit
+        </div>
+        <div class="pillar-item">
+            <i class="fa-solid fa-clock"></i> Timeless Style
+        </div>
+        <div class="pillar-item">
+            <i class="fa-solid fa-leaf"></i> Sustainable Packaging
+        </div>
     </div>
 
-</section>
+    <!-- Product Showcase Section -->
+    <section id="collection">
+        <div class="section-header">
+            <h2>The Signature Collection</h2>
+            <p>100% Cotton. Precision Crafted in India.</p>
+        </div>
 
-<section class="about">
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="product-badge">Classic</span>
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=700&q=80" alt="Classic Logo Tee">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Classic Logo Tee</h3>
+                    <div class="product-price">₹999.00</div>
+                    <a href="#" class="btn-outline">View Details</a>
+                </div>
+            </div>
 
-    <h2 class="section-title">Italian Style. Made in India.</h2>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="product-badge">Minimal</span>
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=700&q=80" alt="Minimal Tee">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimal Tee</h3>
+                    <div class="product-price">₹999.00</div>
+                    <a href="#" class="btn-outline">View Details</a>
+                </div>
+            </div>
 
-    <p>
-        PARQX combines European-inspired aesthetics
-        with Indian craftsmanship to create premium
-        innerwear that delivers comfort, durability,
-        and confidence. Every product is designed
-        for modern lifestyles with a focus on fit,
-        fabric, and timeless style.
-    </p>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="product-badge">Statement</span>
+                    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=700&q=80" alt="Statement Tee">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Statement Tee ("Live Bold")</h3>
+                    <div class="product-price">₹999.00</div>
+                    <a href="#" class="btn-outline">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <!-- Brand Story Section -->
+    <section class="story-section" id="story">
+        <div class="story-content">
+            <h2>Our Story</h2>
+            <p>Created for people who value comfort, confidence, and simplicity. Every piece is designed with quality and timeless style in mind.</p>
+            <div class="story-quote">
+                "More than apparel. A mindset. A community. A bolder tomorrow."
+            </div>
+            <p>Proudly designed and manufactured in India under Stunfox Organization, ensuring precision detailing from inside neck labels down to sustainable packaging elements.</p>
+        </div>
+        <div class="story-image"></div>
+    </section>
 
-<footer>
-    © 2026 PARQX. All Rights Reserved.
-</footer>
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>LIVOFOX</h4>
+                <p>Live Bold. Premium Apparel crafted for your everyday confidence.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com/livofox" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#collection">Shop T-Shirts</a></li>
+                    <li><a href="#story">Brand Story</a></li>
+                    <li><a href="#">Support & FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka, India</p>
+                <p><i class="fa-solid fa-envelope"></i> support@livofox.com</p>
+                <p><i class="fa-solid fa-globe"></i> www.livofox.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Organization</h4>
+                <p>A Brand By:</p>
+                <p><strong>STUNFOX ORGANIZATION</strong></p>
+                <p class="footer-gstin">GSTIN: 29BJEPR8268P1Z1</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LIVOFOX. All Rights Reserved. | Let's Build A Smarter Tomorrow.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
