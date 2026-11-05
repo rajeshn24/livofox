@@ -188,11 +188,6 @@ header {
     border:1px solid var(--gold);
 }
 
-.btn-dark:hover {
-    background:var(--gold);
-    color:#17130d;
-}
-
 /* INTRO */
 
 .intro {
@@ -243,7 +238,7 @@ header {
     font-size:12px;
 }
 
-/* MAIN CATEGORY GRID */
+/* CATEGORY GRID */
 
 .categories {
     padding:0 6% 85px;
@@ -294,7 +289,29 @@ header {
     margin-top:5px;
 }
 
-/* CLASS 25 CATALOGUE */
+/* ORIGINAL LIVOFOX SNEAKER */
+
+.livofox-shoe {
+    width:100%;
+    height:100%;
+    min-height:330px;
+    overflow:hidden;
+    background:#25231f;
+}
+
+.livofox-shoe svg {
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:330px;
+    transition:transform .7s;
+}
+
+.category:hover .livofox-shoe svg {
+    transform:scale(1.07);
+}
+
+/* PRODUCT CATALOGUE */
 
 .catalogue {
     background:#191817;
@@ -537,9 +554,7 @@ footer {
     margin-top:20px;
 }
 
-.social a {
-    font-size:13px;
-}
+.social a { font-size:13px; }
 
 .footer-bottom {
     border-top:1px solid #302d28;
@@ -564,6 +579,7 @@ footer {
 @media(max-width:700px) {
     .navbar { min-height:75px; }
     .menu-toggle { display:block; }
+
     .nav-links {
         display:none;
         position:absolute;
@@ -579,6 +595,7 @@ footer {
 
     .nav-links.open { display:flex; }
     .nav-actions { gap:13px; font-size:15px; }
+
     .brand { font-size:22px; letter-spacing:4.5px; }
     .tagline { font-size:8px; letter-spacing:4px; }
 
@@ -590,12 +607,28 @@ footer {
     .intro h2 { font-size:32px; }
 
     .section-heading h2 { font-size:34px; }
-    .categories { padding:0 4% 60px; gap:10px; }
-    .category, .category img { min-height:230px; }
-    .category-label h3 { font-size:12px; letter-spacing:1px; }
+
+    .categories {
+        padding:0 4% 60px;
+        gap:10px;
+    }
+
+    .category, .category img,
+    .livofox-shoe, .livofox-shoe svg {
+        min-height:230px;
+    }
+
+    .category-label h3 {
+        font-size:12px;
+        letter-spacing:1px;
+    }
 
     .catalogue { padding:45px 4% 60px; }
-    .catalogue-grid { grid-template-columns:repeat(2,1fr); }
+
+    .catalogue-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
     .catalogue-item { padding:14px 10px; }
 
     .product-grid { grid-template-columns:1fr; }
@@ -607,7 +640,11 @@ footer {
     .story-content h2 { font-size:40px; }
 
     .values { grid-template-columns:repeat(2,1fr); }
-    .footer-grid { grid-template-columns:1fr 1fr; gap:25px; }
+
+    .footer-grid {
+        grid-template-columns:1fr 1fr;
+        gap:25px;
+    }
 }
 
 @media(max-width:380px) {
@@ -621,467 +658,547 @@ footer {
 <body>
 
 <div class="announcement">
-    LIVOFOX &nbsp; | &nbsp; A NEW EXPRESSION OF EVERYDAY STYLE
+LIVOFOX &nbsp; | &nbsp; A NEW EXPRESSION OF EVERYDAY STYLE
 </div>
 
 <header>
-    <div class="navbar">
+<div class="navbar">
 
-        <a href="#home" class="logo">
-            <span class="brand">LIVOFOX</span>
-            <span class="tagline">LIVE BOLD</span>
-        </a>
+<a href="#home" class="logo">
+    <span class="brand">LIVOFOX</span>
+    <span class="tagline">LIVE BOLD</span>
+</a>
 
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
-            ☰
-        </button>
+<button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+☰
+</button>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home" onclick="closeMenu()">Home</a></li>
-            <li><a href="#categories" onclick="closeMenu()">Collections</a></li>
-            <li><a href="#class25" onclick="closeMenu()">Shop All</a></li>
-            <li><a href="#story" onclick="closeMenu()">Our Story</a></li>
-            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-        </ul>
+<ul class="nav-links" id="navLinks">
+    <li><a href="#home" onclick="closeMenu()">Home</a></li>
+    <li><a href="#categories" onclick="closeMenu()">Collections</a></li>
+    <li><a href="#class25" onclick="closeMenu()">Shop All</a></li>
+    <li><a href="#story" onclick="closeMenu()">Our Story</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+</ul>
 
-        <div class="nav-actions">
-            <a href="#class25" aria-label="Search">⌕</a>
-            <a href="#contact" aria-label="Account">♙</a>
-            <a href="#class25" aria-label="Shopping bag">♧</a>
-        </div>
+<div class="nav-actions">
+    <a href="#class25" aria-label="Search">⌕</a>
+    <a href="#contact" aria-label="Account">♙</a>
+    <a href="#class25" aria-label="Shopping bag">♧</a>
+</div>
 
-    </div>
+</div>
 </header>
 
 <!-- HERO -->
 
 <section class="hero" id="home">
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="eyebrow">The LIVOFOX Collection</div>
+<div class="eyebrow">The LIVOFOX Collection</div>
 
-        <h1>Wear Your<br>Confidence</h1>
+<h1>Wear Your<br>Confidence</h1>
 
-        <p>
-            A refined expression of everyday fashion.
-            Created for those who believe style is not just what you wear,
-            but how you carry yourself.
-        </p>
+<p>
+A refined expression of everyday fashion.
+Created for those who believe style is not just what you wear,
+but how you carry yourself.
+</p>
 
-        <a href="#categories" class="btn">Discover LIVOFOX</a>
+<a href="#categories" class="btn">Discover LIVOFOX</a>
 
-    </div>
+</div>
 </section>
 
 <!-- INTRO -->
 
 <section class="intro">
-    <h2>Style Beyond Seasons.</h2>
-    <p>
-        From everyday essentials to statement pieces,
-        LIVOFOX brings clothing, footwear and headwear
-        together under one distinctive fashion identity.
-        Designed in India for a bolder tomorrow.
-    </p>
+<h2>Style Beyond Seasons.</h2>
+<p>
+From everyday essentials to statement pieces,
+LIVOFOX brings clothing, footwear and headwear
+together under one distinctive fashion identity.
+Designed in India for a bolder tomorrow.
+</p>
 </section>
 
-<!-- MAIN COLLECTIONS -->
+<!-- COLLECTIONS -->
 
 <section id="categories">
 
-    <div class="section-heading">
-        <span>Explore Our World</span>
-        <h2>The Collections</h2>
-        <p>Discover your style. Define your identity.</p>
-    </div>
+<div class="section-heading">
+<span>Explore Our World</span>
+<h2>The Collections</h2>
+<p>Discover your style. Define your identity.</p>
+</div>
 
-    <div class="categories">
+<div class="categories">
 
-        <a href="#class25" class="category">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85" alt="Women's fashion">
-            <div class="category-label">
-                <h3>Women</h3>
-                <p>Explore Collection</p>
-            </div>
-        </a>
+<a href="#class25" class="category">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85" alt="Women's fashion">
+<div class="category-label">
+<h3>Women</h3>
+<p>Explore Collection</p>
+</div>
+</a>
 
-        <a href="#class25" class="category">
-            <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&q=85" alt="Men's fashion">
-            <div class="category-label">
-                <h3>Men</h3>
-                <p>Explore Collection</p>
-            </div>
-        </a>
+<a href="#class25" class="category">
+<img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&q=85" alt="Men's fashion">
+<div class="category-label">
+<h3>Men</h3>
+<p>Explore Collection</p>
+</div>
+</a>
 
-        <a href="#class25" class="category">
-            <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=800&q=85" alt="Casual clothing">
-            <div class="category-label">
-                <h3>Unisex</h3>
-                <p>Everyday Essentials</p>
-            </div>
-        </a>
+<a href="#class25" class="category">
+<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=800&q=85" alt="Casual clothing">
+<div class="category-label">
+<h3>Unisex</h3>
+<p>Everyday Essentials</p>
+</div>
+</a>
 
-        <a href="#class25" class="category">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85" alt="Footwear">
-            <div class="category-label">
-                <h3>Footwear</h3>
-                <p>Step Into Style</p>
-            </div>
-        </a>
+<!-- LIVOFOX ORIGINAL SNEAKER - NO NIKE LOGO -->
 
-    </div>
+<a href="#class25" class="category">
+
+<div class="livofox-shoe">
+
+<svg viewBox="0 0 600 400"
+xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+<linearGradient id="shoeBody" x1="0" y1="0" x2=".8" y2="1">
+<stop offset="0%" stop-color="#454545"/>
+<stop offset="50%" stop-color="#191919"/>
+<stop offset="100%" stop-color="#080808"/>
+</linearGradient>
+
+<linearGradient id="sole" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#d4b77d"/>
+<stop offset="100%" stop-color="#8e7040"/>
+</linearGradient>
+
+<filter id="shadow">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+
+</defs>
+
+<!-- Background -->
+
+<rect width="600" height="400" fill="#25231f"/>
+
+<!-- Shadow -->
+
+<ellipse cx="300" cy="310" rx="210" ry="22"
+fill="#000" opacity=".65" filter="url(#shadow)"/>
+
+<!-- Sneaker sole -->
+
+<path d="M85 278 Q130 295 205 285
+L340 270 Q390 260 425 278
+L505 293 Q535 300 522 322
+Q510 338 475 338
+L125 338 Q75 335 70 315
+Q65 294 85 278Z"
+fill="url(#sole)"/>
+
+<!-- Main shoe body -->
+
+<path d="M88 278
+Q120 260 155 230
+L210 155
+Q230 130 258 145
+L325 195
+Q370 222 425 245
+L505 270
+Q530 280 522 305
+L115 305
+Q75 300 88 278Z"
+fill="url(#shoeBody)"
+stroke="#77705f"
+stroke-width="2"/>
+
+<!-- Toe panel -->
+
+<path d="M88 278 Q135 260 190 255
+L245 270 L235 305 L115 305
+Q75 300 88 278Z"
+fill="#242424"/>
+
+<!-- Side panel -->
+
+<path d="M210 155 L255 185 L310 250
+L235 270 L190 255Z"
+fill="#33312d"
+stroke="#77705f"
+stroke-width="2"/>
+
+<!-- LIVOFOX branding -->
+
+<text x="300" y="250"
+fill="#d4b77d"
+font-family="Arial, sans-serif"
+font-size="23"
+font-weight="bold"
+letter-spacing="3"
+text-anchor="middle">
+LIVOFOX
+</text>
+
+<!-- Shoe laces -->
+
+<g stroke="#d2c7ae" stroke-width="5" stroke-linecap="round">
+<path d="M232 173 L300 215"/>
+<path d="M220 190 L290 230"/>
+<path d="M210 208 L280 244"/>
+<path d="M245 165 L230 180"/>
+<path d="M260 190 L245 205"/>
+<path d="M278 213 L263 228"/>
+</g>
+
+<!-- Sole detail -->
+
+<path d="M112 314 L490 314"
+stroke="#30291e"
+stroke-width="3"/>
+
+<!-- Heel branding -->
+
+<text x="125" y="250"
+fill="#c5a46d"
+font-size="11"
+font-family="Arial"
+letter-spacing="2">
+LF
+</text>
+
+</svg>
+
+</div>
+
+<div class="category-label">
+<h3>Footwear</h3>
+<p>Step Into Style</p>
+</div>
+
+</a>
+
+</div>
 </section>
 
-<!-- CLASS 25 COMPLETE PRODUCT CATALOGUE -->
+<!-- COMPLETE PRODUCT CATALOGUE -->
 
 <section class="catalogue" id="class25">
 
-    <div class="catalogue-intro">
-        <span class="eyebrow">Fashion. Comfort. Identity.</span>
-        <h2>The Complete LIVOFOX Universe</h2>
-        <p>Explore our clothing, footwear and headwear categories.</p>
-    </div>
+<div class="catalogue-intro">
+<span class="eyebrow">Fashion. Comfort. Identity.</span>
+<h2>The Complete LIVOFOX Universe</h2>
+<p>Explore our clothing, footwear and headwear categories.</p>
+</div>
 
-    <div class="filters">
-        <button class="filter-btn active" onclick="filterItems('all',this)">All Categories</button>
-        <button class="filter-btn" onclick="filterItems('men',this)">Men</button>
-        <button class="filter-btn" onclick="filterItems('women',this)">Women</button>
-        <button class="filter-btn" onclick="filterItems('unisex',this)">Unisex</button>
-        <button class="filter-btn" onclick="filterItems('sports',this)">Sportswear</button>
-        <button class="filter-btn" onclick="filterItems('footwear',this)">Footwear</button>
-        <button class="filter-btn" onclick="filterItems('headwear',this)">Headwear</button>
-        <button class="filter-btn" onclick="filterItems('kids',this)">Kids & Baby</button>
-    </div>
+<div class="filters">
 
-    <div class="catalogue-grid" id="catalogueGrid">
+<button class="filter-btn active" onclick="filterItems('all',this)">All Categories</button>
+<button class="filter-btn" onclick="filterItems('men',this)">Men</button>
+<button class="filter-btn" onclick="filterItems('women',this)">Women</button>
+<button class="filter-btn" onclick="filterItems('unisex',this)">Unisex</button>
+<button class="filter-btn" onclick="filterItems('sports',this)">Sportswear</button>
+<button class="filter-btn" onclick="filterItems('footwear',this)">Footwear</button>
+<button class="filter-btn" onclick="filterItems('headwear',this)">Headwear</button>
+<button class="filter-btn" onclick="filterItems('kids',this)">Kids & Baby</button>
 
-        <!-- MEN -->
+</div>
 
-        <div class="catalogue-item" data-category="men">
-            <h4>Men's T-Shirts</h4>
-            <p>Classic, polo, crew neck and graphic tees</p>
-        </div>
+<div class="catalogue-grid" id="catalogueGrid">
 
-        <div class="catalogue-item" data-category="men">
-            <h4>Men's Shirts</h4>
-            <p>Formal, casual, dress and linen shirts</p>
-        </div>
+<!-- MEN -->
 
-        <div class="catalogue-item" data-category="men">
-            <h4>Trousers & Jeans</h4>
-            <p>Jeans, chinos, trousers and shorts</p>
-        </div>
+<div class="catalogue-item" data-category="men">
+<h4>Men's T-Shirts</h4><p>Classic, polo, crew neck and graphic tees</p>
+</div>
 
-        <div class="catalogue-item" data-category="men">
-            <h4>Men's Innerwear</h4>
-            <p>Boxers, trunks, briefs and vests</p>
-        </div>
+<div class="catalogue-item" data-category="men">
+<h4>Men's Shirts</h4><p>Formal, casual, dress and linen shirts</p>
+</div>
 
-        <div class="catalogue-item" data-category="men">
-            <h4>Men's Nightwear</h4>
-            <p>Pyjamas, sleepwear and dressing gowns</p>
-        </div>
+<div class="catalogue-item" data-category="men">
+<h4>Trousers & Jeans</h4><p>Jeans, chinos, trousers and shorts</p>
+</div>
 
-        <div class="catalogue-item" data-category="men">
-            <h4>Men's Outerwear</h4>
-            <p>Jackets, coats, blazers and overcoats</p>
-        </div>
+<div class="catalogue-item" data-category="men">
+<h4>Men's Innerwear</h4><p>Boxers, trunks, briefs and vests</p>
+</div>
 
-        <!-- WOMEN -->
+<div class="catalogue-item" data-category="men">
+<h4>Men's Nightwear</h4><p>Pyjamas, sleepwear and dressing gowns</p>
+</div>
 
-        <div class="catalogue-item" data-category="women">
-            <h4>Women's Tops</h4>
-            <p>Blouses, tops, shirts and tunics</p>
-        </div>
+<div class="catalogue-item" data-category="men">
+<h4>Men's Outerwear</h4><p>Jackets, coats, blazers and overcoats</p>
+</div>
 
-        <div class="catalogue-item" data-category="women">
-            <h4>Dresses & Gowns</h4>
-            <p>Casual, formal, evening and party dresses</p>
-        </div>
+<!-- WOMEN -->
 
-        <div class="catalogue-item" data-category="women">
-            <h4>Women's Bottomwear</h4>
-            <p>Leggings, skirts, trousers and jeans</p>
-        </div>
+<div class="catalogue-item" data-category="women">
+<h4>Women's Tops</h4><p>Blouses, tops, shirts and tunics</p>
+</div>
 
-        <div class="catalogue-item" data-category="women">
-            <h4>Women's Innerwear</h4>
-            <p>Bras, panties, lingerie and camisoles</p>
-        </div>
+<div class="catalogue-item" data-category="women">
+<h4>Dresses & Gowns</h4><p>Casual, formal, evening and party dresses</p>
+</div>
 
-        <div class="catalogue-item" data-category="women">
-            <h4>Women's Nightwear</h4>
-            <p>Nightdresses, pyjamas and sleepwear</p>
-        </div>
+<div class="catalogue-item" data-category="women">
+<h4>Women's Bottomwear</h4><p>Leggings, skirts, trousers and jeans</p>
+</div>
 
-        <div class="catalogue-item" data-category="women">
-            <h4>Women's Outerwear</h4>
-            <p>Jackets, coats and cardigans</p>
-        </div>
+<div class="catalogue-item" data-category="women">
+<h4>Women's Innerwear</h4><p>Bras, panties, lingerie and camisoles</p>
+</div>
 
-        <div class="catalogue-item" data-category="women">
-            <h4>Swimwear</h4>
-            <p>Swimsuits, bikinis and beachwear</p>
-        </div>
+<div class="catalogue-item" data-category="women">
+<h4>Women's Nightwear</h4><p>Nightdresses, pyjamas and sleepwear</p>
+</div>
 
-        <!-- UNISEX -->
+<div class="catalogue-item" data-category="women">
+<h4>Women's Outerwear</h4><p>Jackets, coats and cardigans</p>
+</div>
 
-        <div class="catalogue-item" data-category="unisex">
-            <h4>Hoodies & Sweatshirts</h4>
-            <p>Pullovers, jumpers and sweatshirts</p>
-        </div>
+<div class="catalogue-item" data-category="women">
+<h4>Swimwear</h4><p>Swimsuits, bikinis and beachwear</p>
+</div>
 
-        <div class="catalogue-item" data-category="unisex">
-            <h4>Casual Wear</h4>
-            <p>Everyday essentials and coordinated sets</p>
-        </div>
+<!-- UNISEX -->
 
-        <div class="catalogue-item" data-category="unisex">
-            <h4>Denim Collection</h4>
-            <p>Denim jackets, jeans and clothing</p>
-        </div>
+<div class="catalogue-item" data-category="unisex">
+<h4>Hoodies & Sweatshirts</h4><p>Pullovers, jumpers and sweatshirts</p>
+</div>
 
-        <div class="catalogue-item" data-category="unisex">
-            <h4>Belts & Braces</h4>
-            <p>Clothing belts and suspenders</p>
-        </div>
+<div class="catalogue-item" data-category="unisex">
+<h4>Casual Wear</h4><p>Everyday essentials and coordinated sets</p>
+</div>
 
-        <div class="catalogue-item" data-category="unisex">
-            <h4>Socks & Hosiery</h4>
-            <p>Socks, stockings and tights</p>
-        </div>
+<div class="catalogue-item" data-category="unisex">
+<h4>Denim Collection</h4><p>Denim jackets, jeans and clothing</p>
+</div>
 
-        <div class="catalogue-item" data-category="unisex">
-            <h4>Scarves & Stoles</h4>
-            <p>Scarves, shawls and neckwear</p>
-        </div>
+<div class="catalogue-item" data-category="unisex">
+<h4>Belts & Braces</h4><p>Clothing belts and suspenders</p>
+</div>
 
-        <div class="catalogue-item" data-category="unisex">
-            <h4>Gloves & Mittens</h4>
-            <p>Fashion gloves and mittens</p>
-        </div>
+<div class="catalogue-item" data-category="unisex">
+<h4>Socks & Hosiery</h4><p>Socks, stockings and tights</p>
+</div>
 
-        <div class="catalogue-item" data-category="unisex">
-            <h4>Traditional Wear</h4>
-            <p>Kurtas, ethnic outfits and traditional clothing</p>
-        </div>
+<div class="catalogue-item" data-category="unisex">
+<h4>Scarves & Stoles</h4><p>Scarves, shawls and neckwear</p>
+</div>
 
-        <!-- SPORTS -->
+<div class="catalogue-item" data-category="unisex">
+<h4>Gloves & Mittens</h4><p>Fashion gloves and mittens</p>
+</div>
 
-        <div class="catalogue-item" data-category="sports">
-            <h4>Sports T-Shirts</h4>
-            <p>Training tees and sports singlets</p>
-        </div>
+<div class="catalogue-item" data-category="unisex">
+<h4>Traditional Wear</h4><p>Kurtas, ethnic outfits and traditional clothing</p>
+</div>
 
-        <div class="catalogue-item" data-category="sports">
-            <h4>Gym Wear</h4>
-            <p>Gym shorts, leggings and training apparel</p>
-        </div>
+<!-- SPORTS -->
 
-        <div class="catalogue-item" data-category="sports">
-            <h4>Running Apparel</h4>
-            <p>Running tops, shorts and tights</p>
-        </div>
+<div class="catalogue-item" data-category="sports">
+<h4>Sports T-Shirts</h4><p>Training tees and sports singlets</p>
+</div>
 
-        <div class="catalogue-item" data-category="sports">
-            <h4>Yoga Wear</h4>
-            <p>Yoga pants and activewear</p>
-        </div>
+<div class="catalogue-item" data-category="sports">
+<h4>Gym Wear</h4><p>Gym shorts, leggings and training apparel</p>
+</div>
 
-        <div class="catalogue-item" data-category="sports">
-            <h4>Cycling Clothing</h4>
-            <p>Cycling jerseys and clothing</p>
-        </div>
+<div class="catalogue-item" data-category="sports">
+<h4>Running Apparel</h4><p>Running tops, shorts and tights</p>
+</div>
 
-        <div class="catalogue-item" data-category="sports">
-            <h4>Sports Uniforms</h4>
-            <p>Team kits and martial arts uniforms</p>
-        </div>
+<div class="catalogue-item" data-category="sports">
+<h4>Yoga Wear</h4><p>Yoga pants and activewear</p>
+</div>
 
-        <div class="catalogue-item" data-category="sports">
-            <h4>Tracksuits</h4>
-            <p>Tracksuits and athletic clothing</p>
-        </div>
+<div class="catalogue-item" data-category="sports">
+<h4>Cycling Clothing</h4><p>Cycling jerseys and clothing</p>
+</div>
 
-        <!-- FOOTWEAR -->
+<div class="catalogue-item" data-category="sports">
+<h4>Sports Uniforms</h4><p>Team kits and martial arts uniforms</p>
+</div>
 
-        <div class="catalogue-item" data-category="footwear">
-            <h4>Sneakers</h4>
-            <p>Casual and fashion sneakers</p>
-        </div>
+<div class="catalogue-item" data-category="sports">
+<h4>Tracksuits</h4><p>Tracksuits and athletic clothing</p>
+</div>
 
-        <div class="catalogue-item" data-category="footwear">
-            <h4>Formal Shoes</h4>
-            <p>Leather shoes and dress footwear</p>
-        </div>
+<!-- FOOTWEAR -->
 
-        <div class="catalogue-item" data-category="footwear">
-            <h4>Sports Shoes</h4>
-            <p>Running, gym and training shoes</p>
-        </div>
+<div class="catalogue-item" data-category="footwear">
+<h4>Sneakers</h4><p>Casual and fashion sneakers</p>
+</div>
 
-        <div class="catalogue-item" data-category="footwear">
-            <h4>Boots</h4>
-            <p>Ankle boots and fashion boots</p>
-        </div>
+<div class="catalogue-item" data-category="footwear">
+<h4>Formal Shoes</h4><p>Leather shoes and dress footwear</p>
+</div>
 
-        <div class="catalogue-item" data-category="footwear">
-            <h4>Sandals & Slippers</h4>
-            <p>Slides, sandals and casual slippers</p>
-        </div>
+<div class="catalogue-item" data-category="footwear">
+<h4>Sports Shoes</h4><p>Running, gym and training shoes</p>
+</div>
 
-        <div class="catalogue-item" data-category="footwear">
-            <h4>Ethnic Footwear</h4>
-            <p>Traditional shoes and sandals</p>
-        </div>
+<div class="catalogue-item" data-category="footwear">
+<h4>Boots</h4><p>Ankle boots and fashion boots</p>
+</div>
 
-        <!-- HEADWEAR -->
+<div class="catalogue-item" data-category="footwear">
+<h4>Sandals & Slippers</h4><p>Slides, sandals and casual slippers</p>
+</div>
 
-        <div class="catalogue-item" data-category="headwear">
-            <h4>Caps</h4>
-            <p>Baseball caps and fashion caps</p>
-        </div>
+<div class="catalogue-item" data-category="footwear">
+<h4>Ethnic Footwear</h4><p>Traditional shoes and sandals</p>
+</div>
 
-        <div class="catalogue-item" data-category="headwear">
-            <h4>Hats</h4>
-            <p>Fashion hats and sun hats</p>
-        </div>
+<!-- HEADWEAR -->
 
-        <div class="catalogue-item" data-category="headwear">
-            <h4>Beanies</h4>
-            <p>Winter hats and knitted headwear</p>
-        </div>
+<div class="catalogue-item" data-category="headwear">
+<h4>Caps</h4><p>Baseball caps and fashion caps</p>
+</div>
 
-        <div class="catalogue-item" data-category="headwear">
-            <h4>Headbands</h4>
-            <p>Clothing headbands and bandanas</p>
-        </div>
+<div class="catalogue-item" data-category="headwear">
+<h4>Hats</h4><p>Fashion hats and sun hats</p>
+</div>
 
-        <!-- KIDS AND BABY -->
+<div class="catalogue-item" data-category="headwear">
+<h4>Beanies</h4><p>Winter hats and knitted headwear</p>
+</div>
 
-        <div class="catalogue-item" data-category="kids">
-            <h4>Baby Clothing</h4>
-            <p>Baby garments and layettes</p>
-        </div>
+<div class="catalogue-item" data-category="headwear">
+<h4>Headbands</h4><p>Clothing headbands and bandanas</p>
+</div>
 
-        <div class="catalogue-item" data-category="kids">
-            <h4>Kids' Clothing</h4>
-            <p>T-shirts, shirts, dresses and trousers</p>
-        </div>
+<!-- KIDS -->
 
-        <div class="catalogue-item" data-category="kids">
-            <h4>Kids' Footwear</h4>
-            <p>Children's shoes and sandals</p>
-        </div>
+<div class="catalogue-item" data-category="kids">
+<h4>Baby Clothing</h4><p>Baby garments and layettes</p>
+</div>
 
-        <div class="catalogue-item" data-category="kids">
-            <h4>Kids' Nightwear</h4>
-            <p>Children's pyjamas and sleepwear</p>
-        </div>
+<div class="catalogue-item" data-category="kids">
+<h4>Kids' Clothing</h4><p>T-shirts, shirts, dresses and trousers</p>
+</div>
 
-        <div class="catalogue-item" data-category="kids">
-            <h4>Baby Bibs</h4>
-            <p>Non-paper clothing bibs</p>
-        </div>
+<div class="catalogue-item" data-category="kids">
+<h4>Kids' Footwear</h4><p>Children's shoes and sandals</p>
+</div>
 
-    </div>
+<div class="catalogue-item" data-category="kids">
+<h4>Kids' Nightwear</h4><p>Children's pyjamas and sleepwear</p>
+</div>
+
+<div class="catalogue-item" data-category="kids">
+<h4>Baby Bibs</h4><p>Non-paper clothing bibs</p>
+</div>
+
+</div>
 </section>
 
 <!-- FEATURED COLLECTION -->
 
 <section class="products">
 
-    <div class="section-heading">
-        <span>Curated For You</span>
-        <h2>Signature Essentials</h2>
-        <p>A glimpse into the LIVOFOX design philosophy.</p>
-    </div>
+<div class="section-heading">
+<span>Curated For You</span>
+<h2>Signature Essentials</h2>
+<p>A glimpse into the LIVOFOX design philosophy.</p>
+</div>
 
-    <div class="product-grid">
+<div class="product-grid">
 
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=85" alt="Premium T-shirt">
-            <div class="product-info">
-                <h3>THE SIGNATURE TEE</h3>
-                <p>Premium Everyday Collection</p>
-            </div>
-        </div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=85" alt="Premium T-shirt">
+<div class="product-info">
+<h3>THE SIGNATURE TEE</h3>
+<p>Premium Everyday Collection</p>
+</div>
+</div>
 
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=85" alt="Minimal apparel">
-            <div class="product-info">
-                <h3>THE MINIMAL EDIT</h3>
-                <p>Contemporary Essentials</p>
-            </div>
-        </div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=85" alt="Minimal apparel">
+<div class="product-info">
+<h3>THE MINIMAL EDIT</h3>
+<p>Contemporary Essentials</p>
+</div>
+</div>
 
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85" alt="Fashion collection">
-            <div class="product-info">
-                <h3>THE EVERYDAY EDIT</h3>
-                <p>Designed For Modern Living</p>
-            </div>
-        </div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85" alt="Fashion collection">
+<div class="product-info">
+<h3>THE EVERYDAY EDIT</h3>
+<p>Designed For Modern Living</p>
+</div>
+</div>
 
-    </div>
+</div>
 </section>
 
 <!-- BRAND STORY -->
 
 <section class="story" id="story">
 
-    <div class="story-image"></div>
+<div class="story-image"></div>
 
-    <div class="story-content">
-        <span>THE LIVOFOX PHILOSOPHY</span>
+<div class="story-content">
 
-        <h2>Live Bold.<br>Think Different.</h2>
+<span>THE LIVOFOX PHILOSOPHY</span>
 
-        <p>
-            LIVOFOX represents a modern approach to fashion.
-            We believe that great style begins with confidence,
-            comfort and attention to detail.
-        </p>
+<h2>Live Bold.<br>Think Different.</h2>
 
-        <p>
-            Our vision is to build an Indian fashion brand
-            with a distinctive identity and a presence
-            across clothing, footwear and headwear.
-        </p>
+<p>
+LIVOFOX represents a modern approach to fashion.
+We believe that great style begins with confidence,
+comfort and attention to detail.
+</p>
 
-        <p>
-            Proudly developed in India under
-            STUNFOX ORGANISATION.
-        </p>
+<p>
+Our vision is to build an Indian fashion brand
+with a distinctive identity and a presence
+across clothing, footwear and headwear.
+</p>
 
-        <a href="#categories" class="btn">Explore Our World</a>
-    </div>
+<p>
+Proudly developed in India under
+STUNFOX ORGANISATION.
+</p>
 
+<a href="#categories" class="btn">Explore Our World</a>
+
+</div>
 </section>
 
 <!-- BRAND VALUES -->
 
 <section class="values">
 
-    <div class="value">
-        <h3>QUALITY FIRST</h3>
-        <p>Attention to detail in every creation.</p>
-    </div>
+<div class="value">
+<h3>QUALITY FIRST</h3>
+<p>Attention to detail in every creation.</p>
+</div>
 
-    <div class="value">
-        <h3>MODERN DESIGN</h3>
-        <p>Contemporary fashion with timeless appeal.</p>
-    </div>
+<div class="value">
+<h3>MODERN DESIGN</h3>
+<p>Contemporary fashion with timeless appeal.</p>
+</div>
 
-    <div class="value">
-        <h3>MADE IN INDIA</h3>
-        <p>Building an identity with Indian roots.</p>
-    </div>
+<div class="value">
+<h3>MADE IN INDIA</h3>
+<p>Building an identity with Indian roots.</p>
+</div>
 
-    <div class="value">
-        <h3>LIVE BOLD</h3>
-        <p>Confidence is always in style.</p>
-    </div>
+<div class="value">
+<h3>LIVE BOLD</h3>
+<p>Confidence is always in style.</p>
+</div>
 
 </section>
 
@@ -1089,59 +1206,68 @@ footer {
 
 <footer id="contact">
 
-    <div class="footer-grid">
+<div class="footer-grid">
 
-        <div class="footer-col">
-            <p class="footer-logo">LIVOFOX</p>
-            <p>LIVE BOLD</p>
-            <p>
-                A contemporary fashion identity
-                created for a new generation.
-            </p>
+<div class="footer-col">
 
-            <div class="social">
-                <a href="https://instagram.com/livofox" target="_blank" rel="noopener">INSTAGRAM</a>
-                <a href="https://facebook.com/livofox" target="_blank" rel="noopener">FACEBOOK</a>
-            </div>
-        </div>
+<p class="footer-logo">LIVOFOX</p>
+<p>LIVE BOLD</p>
 
-        <div class="footer-col">
-            <h3>EXPLORE</h3>
-            <a href="#home">Home</a>
-            <a href="#categories">Collections</a>
-            <a href="#class25">Shop All</a>
-            <a href="#story">Our Story</a>
-        </div>
+<p>
+A contemporary fashion identity
+created for a new generation.
+</p>
 
-        <div class="footer-col">
-            <h3>COLLECTIONS</h3>
-            <a href="#class25">Men's Fashion</a>
-            <a href="#class25">Women's Fashion</a>
-            <a href="#class25">Innerwear</a>
-            <a href="#class25">Sportswear</a>
-            <a href="#class25">Footwear & Headwear</a>
-        </div>
+<div class="social">
+<a href="https://instagram.com/livofox" target="_blank" rel="noopener">INSTAGRAM</a>
+<a href="https://facebook.com/livofox" target="_blank" rel="noopener">FACEBOOK</a>
+</div>
 
-        <div class="footer-col">
-            <h3>CONTACT</h3>
-            <p>Bengaluru, Karnataka, India</p>
-            <a href="mailto:support@livofox.com">support@livofox.com</a>
-            <a href="https://livofox.com">www.livofox.com</a>
-        </div>
+</div>
 
-    </div>
+<div class="footer-col">
+<h3>EXPLORE</h3>
+<a href="#home">Home</a>
+<a href="#categories">Collections</a>
+<a href="#class25">Shop All</a>
+<a href="#story">Our Story</a>
+</div>
 
-    <div class="footer-bottom">
-        <p>
-            A BRAND BY <strong>STUNFOX ORGANISATION</strong>
-        </p>
-        <p>
-            © 2026 LIVOFOX. ALL RIGHTS RESERVED.
-        </p>
-        <p>DESIGNED IN INDIA.</p>
-    </div>
+<div class="footer-col">
+<h3>COLLECTIONS</h3>
+<a href="#class25">Men's Fashion</a>
+<a href="#class25">Women's Fashion</a>
+<a href="#class25">Innerwear</a>
+<a href="#class25">Sportswear</a>
+<a href="#class25">Footwear & Headwear</a>
+</div>
+
+<div class="footer-col">
+<h3>CONTACT</h3>
+<p>Bengaluru, Karnataka, India</p>
+<a href="mailto:support@livofox.com">support@livofox.com</a>
+<a href="https://livofox.com">www.livofox.com</a>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+A BRAND BY <strong>STUNFOX ORGANISATION</strong>
+</p>
+
+<p>
+© 2026 LIVOFOX. ALL RIGHTS RESERVED.
+</p>
+
+<p>DESIGNED IN INDIA.</p>
+
+</div>
 
 </footer>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
