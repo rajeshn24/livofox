@@ -1,597 +1,1180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIVOFOX | Live Bold - Premium Apparel</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-color: #0b0b0b;
-            --card-bg: #161616;
-            --text-primary: #ffffff;
-            --text-secondary: #aaaaaa;
-            --accent-gold: #d4af37;
-            --accent-hover: #f3c653;
-            --border-color: #2a2a2a;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
+<title>LIVOFOX | Premium Fashion & Lifestyle</title>
+<meta name="description" content="LIVOFOX - Premium clothing, footwear and headwear. Designed in India for a bolder tomorrow.">
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
-        /* Top Notification Bar */
-        .top-bar {
-            background-color: #000;
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            text-align: center;
-            padding: 8px 15px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--border-color);
-        }
+<style>
+:root {
+    --black:#10100f;
+    --dark:#191817;
+    --gold:#c5a46d;
+    --gold-light:#e0c89e;
+    --cream:#f5f1e9;
+    --white:#ffffff;
+    --grey:#aaa49b;
+}
 
-        /* Header / Navbar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background-color: rgba(11, 11, 11, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-        }
+html { scroll-behavior:smooth; }
 
-        .brand-name {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: 4px;
-            color: var(--text-primary);
-        }
+body {
+    background:var(--black);
+    color:var(--white);
+    font-family:'Montserrat',sans-serif;
+    line-height:1.7;
+}
 
-        .brand-tagline {
-            font-size: 0.65rem;
-            letter-spacing: 5px;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            margin-top: -2px;
-        }
+a { text-decoration:none; color:inherit; }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
+/* ANNOUNCEMENT */
 
-        nav ul li a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
+.announcement {
+    background:var(--gold);
+    color:#17130d;
+    text-align:center;
+    padding:9px;
+    font-size:10px;
+    letter-spacing:2px;
+    font-weight:600;
+    text-transform:uppercase;
+}
 
-        nav ul li a:hover {
-            color: var(--accent-gold);
-        }
+/* HEADER */
 
-        .nav-icons {
-            display: flex;
-            gap: 20px;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
+header {
+    background:rgba(16,16,15,.97);
+    position:sticky;
+    top:0;
+    z-index:100;
+    border-bottom:1px solid #302d28;
+}
 
-        .nav-icons i:hover {
-            color: var(--accent-gold);
-        }
+.navbar {
+    min-height:94px;
+    padding:15px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
 
-        /* Hero Section */
-        .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+.logo {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: 6px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
+.brand {
+    font-size:27px;
+    font-weight:700;
+    letter-spacing:5.5px;
+    line-height:1.3;
+}
 
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin-bottom: 30px;
-            letter-spacing: 1.5px;
-        }
+.tagline {
+    color:var(--gold);
+    font-size:9px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-top:3px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 14px 35px;
-            background-color: var(--text-primary);
-            color: var(--bg-color);
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.nav-links {
+    display:flex;
+    list-style:none;
+    gap:32px;
+}
 
-        .btn:hover {
-            background-color: var(--accent-gold);
-            color: var(--text-primary);
-        }
+.nav-links a {
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#ddd;
+    transition:.3s;
+}
 
-        /* Brand Pillars Bar */
-        .pillars {
-            display: flex;
-            justify-content: space-around;
-            background-color: var(--card-bg);
-            padding: 25px 5%;
-            border-bottom: 1px solid var(--border-color);
-            text-align: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+.nav-links a:hover { color:var(--gold); }
 
-        .pillar-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
+.nav-actions {
+    display:flex;
+    gap:22px;
+    font-size:17px;
+}
 
-        .pillar-item i {
-            color: var(--accent-gold);
-            font-size: 1.2rem;
-        }
+.nav-actions a:hover { color:var(--gold); }
 
-        /* Section Header Styling */
-        .section-header {
-            text-align: center;
-            padding: 80px 20px 40px;
-        }
+.menu-toggle {
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:23px;
+    cursor:pointer;
+}
 
-        .section-header h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
+/* HERO */
 
-        .section-header p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-        }
+.hero {
+    min-height:690px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:80px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,.40),rgba(0,0,0,.78)),
+    url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=85')
+    center/cover no-repeat;
+}
 
-        /* Products Grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 0 5% 80px;
-        }
+.hero-content { max-width:850px; }
 
-        .product-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
+.eyebrow {
+    color:var(--gold-light);
+    font-size:11px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-gold);
-        }
+.hero h1 {
+    font-family:'Cormorant Garamond',serif;
+    font-size:76px;
+    font-weight:500;
+    letter-spacing:5px;
+    line-height:1.1;
+    text-transform:uppercase;
+}
 
-        .product-img {
-            height: 380px;
-            background-color: #222;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
+.hero p {
+    color:#e1ded8;
+    font-size:13px;
+    letter-spacing:1.5px;
+    max-width:600px;
+    margin:25px auto 35px;
+}
 
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.btn {
+    display:inline-block;
+    padding:15px 38px;
+    background:var(--gold);
+    color:#17130d;
+    font-size:10px;
+    letter-spacing:2.5px;
+    font-weight:700;
+    text-transform:uppercase;
+    transition:.3s;
+}
 
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: var(--accent-gold);
-            color: var(--bg-color);
-            padding: 5px 12px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+.btn:hover {
+    background:var(--cream);
+    transform:translateY(-3px);
+}
 
-        .product-info {
-            padding: 20px;
-            text-align: center;
-        }
+.btn-dark {
+    background:transparent;
+    color:white;
+    border:1px solid var(--gold);
+}
 
-        .product-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
+.btn-dark:hover {
+    background:var(--gold);
+    color:#17130d;
+}
 
-        .product-price {
-            color: var(--accent-gold);
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
+/* INTRO */
 
-        .btn-outline {
-            display: inline-block;
-            padding: 10px 25px;
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--text-primary);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
+.intro {
+    padding:85px 8%;
+    text-align:center;
+    background:var(--cream);
+    color:var(--black);
+}
 
-        .btn-outline:hover {
-            background-color: var(--text-primary);
-            color: var(--bg-color);
-        }
+.intro h2 {
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px;
+    font-weight:500;
+    letter-spacing:2px;
+}
 
-        /* Brand Story Section */
-        .story-section {
-            background-color: var(--card-bg);
-            padding: 100px 10%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
+.intro p {
+    max-width:720px;
+    margin:15px auto 0;
+    color:#686158;
+    font-size:13px;
+}
 
-        .story-content {
-            flex: 1;
-        }
+/* SECTION HEADINGS */
 
-        .story-content h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+.section-heading {
+    text-align:center;
+    padding:85px 20px 45px;
+}
 
-        .story-content p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
+.section-heading span {
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
 
-        .story-quote {
-            font-style: italic;
-            color: var(--accent-gold);
-            border-left: 3px solid var(--accent-gold);
-            padding-left: 15px;
-            margin: 25px 0;
-            font-weight: 500;
-        }
+.section-heading h2 {
+    font-family:'Cormorant Garamond',serif;
+    font-size:43px;
+    font-weight:500;
+    letter-spacing:2px;
+    margin:8px 0;
+}
 
-        .story-image {
-            flex: 1;
-            height: 400px;
-            background: url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
-            border-radius: 4px;
-        }
+.section-heading p {
+    color:var(--grey);
+    font-size:12px;
+}
 
-        /* Footer */
-        footer {
-            background-color: #000;
-            padding: 60px 5% 30px;
-            border-top: 1px solid var(--border-color);
-        }
+/* MAIN CATEGORY GRID */
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
+.categories {
+    padding:0 6% 85px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
 
-        .footer-col h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            color: var(--accent-gold);
-        }
+.category {
+    min-height:330px;
+    position:relative;
+    overflow:hidden;
+    background:#292622;
+}
 
-        .footer-col ul {
-            list-style: none;
-        }
+.category img {
+    width:100%;
+    height:100%;
+    min-height:330px;
+    object-fit:cover;
+    transition:transform .7s;
+    opacity:.78;
+}
 
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
+.category:hover img { transform:scale(1.07); }
 
-        .footer-col ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.85srem;
-            transition: color 0.3s;
-        }
+.category-label {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:35px 15px 22px;
+    text-align:center;
+    background:linear-gradient(transparent,rgba(0,0,0,.92));
+}
 
-        .footer-col ul li a:hover {
-            color: var(--text-primary);
-        }
+.category-label h3 {
+    font-size:17px;
+    letter-spacing:3px;
+    font-weight:600;
+    text-transform:uppercase;
+}
 
-        .footer-col p {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-        }
+.category-label p {
+    color:var(--gold-light);
+    font-size:10px;
+    letter-spacing:2px;
+    margin-top:5px;
+}
 
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
+/* CLASS 25 CATALOGUE */
 
-        .social-icons a {
-            color: var(--text-primary);
-            background-color: var(--card-bg);
-            width: 35px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            transition: background-color 0.3s, color 0.3s;
-            text-decoration: none;
-        }
+.catalogue {
+    background:#191817;
+    padding:55px 6% 80px;
+}
 
-        .social-icons a:hover {
-            background-color: var(--accent-gold);
-            color: var(--bg-color);
-        }
+.catalogue-intro {
+    text-align:center;
+    margin-bottom:35px;
+}
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            letter-spacing: 1px;
-        }
+.catalogue-intro h2 {
+    font-family:'Cormorant Garamond',serif;
+    font-size:38px;
+    font-weight:500;
+}
 
-        .footer-gstin {
-            margin-top: 5px;
-            color: var(--accent-gold);
-        }
+.catalogue-intro p {
+    color:var(--grey);
+    font-size:12px;
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-            .story-section {
-                flex-direction: column;
-                padding: 60px 5%;
-            }
-            .story-image {
-                width: 100%;
-                height: 300px;
-            }
-        }
-    </style>
+.filters {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:30px 0;
+}
+
+.filter-btn {
+    background:transparent;
+    color:#ddd;
+    border:1px solid #49443b;
+    padding:11px 19px;
+    font-family:inherit;
+    font-size:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background:var(--gold);
+    color:#17130d;
+    border-color:var(--gold);
+}
+
+.catalogue-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+}
+
+.catalogue-item {
+    background:#24221f;
+    padding:19px 15px;
+    border:1px solid #36312a;
+    transition:.3s;
+}
+
+.catalogue-item:hover {
+    border-color:var(--gold);
+    transform:translateY(-3px);
+}
+
+.catalogue-item h4 {
+    color:var(--gold-light);
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:5px;
+}
+
+.catalogue-item p {
+    font-size:10px;
+    color:#aaa49b;
+}
+
+.catalogue-item.hidden { display:none; }
+
+/* FEATURED PRODUCTS */
+
+.products {
+    padding:0 6% 90px;
+}
+
+.product-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.product-card {
+    background:#1b1a18;
+    border:1px solid #302d28;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.product-card:hover {
+    border-color:var(--gold);
+    transform:translateY(-5px);
+}
+
+.product-card img {
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    display:block;
+}
+
+.product-info {
+    padding:20px;
+    text-align:center;
+}
+
+.product-info h3 {
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:6px;
+}
+
+.product-info p {
+    color:var(--gold);
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+/* BRAND STORY */
+
+.story {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:var(--cream);
+    color:var(--black);
+}
+
+.story-image {
+    min-height:510px;
+    background:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85') center/cover;
+}
+
+.story-content {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:75px 12%;
+}
+
+.story-content span {
+    color:#987844;
+    font-size:10px;
+    letter-spacing:4px;
+}
+
+.story-content h2 {
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    font-weight:500;
+    margin:12px 0 20px;
+}
+
+.story-content p {
+    font-size:12px;
+    color:#625d54;
+    margin-bottom:18px;
+}
+
+.story-content .btn {
+    align-self:flex-start;
+    margin-top:10px;
+}
+
+/* BRAND VALUES */
+
+.values {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:55px 6%;
+    gap:20px;
+    text-align:center;
+    border-bottom:1px solid #302d28;
+}
+
+.value h3 {
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.value p {
+    color:var(--grey);
+    font-size:10px;
+}
+
+/* FOOTER */
+
+footer {
+    background:#090909;
+    padding:70px 6% 25px;
+}
+
+.footer-grid {
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:45px;
+}
+
+.footer-col h3 {
+    font-size:12px;
+    color:var(--gold);
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.footer-col p,
+.footer-col a {
+    color:#aaa49b;
+    font-size:11px;
+    display:block;
+    margin-bottom:10px;
+}
+
+.footer-col a:hover { color:var(--gold); }
+
+.footer-logo {
+    font-size:24px !important;
+    letter-spacing:5px;
+    font-weight:700;
+    color:white !important;
+}
+
+.social {
+    display:flex;
+    gap:17px;
+    margin-top:20px;
+}
+
+.social a {
+    font-size:13px;
+}
+
+.footer-bottom {
+    border-top:1px solid #302d28;
+    padding-top:25px;
+    text-align:center;
+    color:#777;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.footer-bottom strong { color:var(--gold); }
+
+/* MOBILE */
+
+@media(max-width:950px) {
+    .nav-links { gap:15px; }
+    .catalogue-grid { grid-template-columns:repeat(3,1fr); }
+    .categories { grid-template-columns:repeat(2,1fr); }
+    .footer-grid { grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:700px) {
+    .navbar { min-height:75px; }
+    .menu-toggle { display:block; }
+    .nav-links {
+        display:none;
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:#111;
+        flex-direction:column;
+        padding:25px 7%;
+        gap:20px;
+        border-top:1px solid #333;
+    }
+
+    .nav-links.open { display:flex; }
+    .nav-actions { gap:13px; font-size:15px; }
+    .brand { font-size:22px; letter-spacing:4.5px; }
+    .tagline { font-size:8px; letter-spacing:4px; }
+
+    .hero { min-height:540px; }
+    .hero h1 { font-size:44px; letter-spacing:3px; }
+    .hero p { font-size:11px; }
+
+    .intro { padding:60px 7%; }
+    .intro h2 { font-size:32px; }
+
+    .section-heading h2 { font-size:34px; }
+    .categories { padding:0 4% 60px; gap:10px; }
+    .category, .category img { min-height:230px; }
+    .category-label h3 { font-size:12px; letter-spacing:1px; }
+
+    .catalogue { padding:45px 4% 60px; }
+    .catalogue-grid { grid-template-columns:repeat(2,1fr); }
+    .catalogue-item { padding:14px 10px; }
+
+    .product-grid { grid-template-columns:1fr; }
+    .product-card img { height:350px; }
+
+    .story { grid-template-columns:1fr; }
+    .story-image { min-height:330px; }
+    .story-content { padding:55px 8%; }
+    .story-content h2 { font-size:40px; }
+
+    .values { grid-template-columns:repeat(2,1fr); }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:25px; }
+}
+
+@media(max-width:380px) {
+    .nav-actions { display:none; }
+    .categories { grid-template-columns:1fr; }
+    .catalogue-grid { grid-template-columns:1fr; }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Top Announcement Bar -->
-    <div class="top-bar">
-        Free Shipping Across India | Designed in India for a Bolder Tomorrow
+<div class="announcement">
+    LIVOFOX &nbsp; | &nbsp; A NEW EXPRESSION OF EVERYDAY STYLE
+</div>
+
+<header>
+    <div class="navbar">
+
+        <a href="#home" class="logo">
+            <span class="brand">LIVOFOX</span>
+            <span class="tagline">LIVE BOLD</span>
+        </a>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#categories" onclick="closeMenu()">Collections</a></li>
+            <li><a href="#class25" onclick="closeMenu()">Shop All</a></li>
+            <li><a href="#story" onclick="closeMenu()">Our Story</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#class25" aria-label="Search">⌕</a>
+            <a href="#contact" aria-label="Account">♙</a>
+            <a href="#class25" aria-label="Shopping bag">♧</a>
+        </div>
+
+    </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="eyebrow">The LIVOFOX Collection</div>
+
+        <h1>Wear Your<br>Confidence</h1>
+
+        <p>
+            A refined expression of everyday fashion.
+            Created for those who believe style is not just what you wear,
+            but how you carry yourself.
+        </p>
+
+        <a href="#categories" class="btn">Discover LIVOFOX</a>
+
+    </div>
+</section>
+
+<!-- INTRO -->
+
+<section class="intro">
+    <h2>Style Beyond Seasons.</h2>
+    <p>
+        From everyday essentials to statement pieces,
+        LIVOFOX brings clothing, footwear and headwear
+        together under one distinctive fashion identity.
+        Designed in India for a bolder tomorrow.
+    </p>
+</section>
+
+<!-- MAIN COLLECTIONS -->
+
+<section id="categories">
+
+    <div class="section-heading">
+        <span>Explore Our World</span>
+        <h2>The Collections</h2>
+        <p>Discover your style. Define your identity.</p>
     </div>
 
-    <!-- Header / Navbar -->
-    <header>
-        <div class="logo-container">
-            <span class="brand-name">LIVOFOX</span>
-            <span class="brand-tagline">Live Bold</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#collection">Collection</a></li>
-                <li><a href="#story">Brand Story</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="nav-icons">
-            <i class="fa-solid fa-magnifying-glass" title="Search"></i>
-            <i class="fa-solid fa-user" title="Account"></i>
-            <i class="fa-solid fa-bag-shopping" title="Cart"></i>
-        </div>
-    </header>
+    <div class="categories">
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>Wear Confidence</h1>
-        <p>More than apparel. A mindset. A community. Designed for people who value comfort, confidence, and simplicity.</p>
-        <a href="#collection" class="btn">Explore Collection</a>
-    </section>
+        <a href="#class25" class="category">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85" alt="Women's fashion">
+            <div class="category-label">
+                <h3>Women</h3>
+                <p>Explore Collection</p>
+            </div>
+        </a>
 
-    <!-- Brand Pillars / Values Banner -->
-    <div class="pillars">
-        <div class="pillar-item">
-            <i class="fa-solid fa-gem"></i> Premium Quality
-        </div>
-        <div class="pillar-item">
-            <i class="fa-solid fa-shield-halved"></i> Comfort Fit
-        </div>
-        <div class="pillar-item">
-            <i class="fa-solid fa-clock"></i> Timeless Style
-        </div>
-        <div class="pillar-item">
-            <i class="fa-solid fa-leaf"></i> Sustainable Packaging
-        </div>
+        <a href="#class25" class="category">
+            <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&q=85" alt="Men's fashion">
+            <div class="category-label">
+                <h3>Men</h3>
+                <p>Explore Collection</p>
+            </div>
+        </a>
+
+        <a href="#class25" class="category">
+            <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=800&q=85" alt="Casual clothing">
+            <div class="category-label">
+                <h3>Unisex</h3>
+                <p>Everyday Essentials</p>
+            </div>
+        </a>
+
+        <a href="#class25" class="category">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85" alt="Footwear">
+            <div class="category-label">
+                <h3>Footwear</h3>
+                <p>Step Into Style</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!-- CLASS 25 COMPLETE PRODUCT CATALOGUE -->
+
+<section class="catalogue" id="class25">
+
+    <div class="catalogue-intro">
+        <span class="eyebrow">Fashion. Comfort. Identity.</span>
+        <h2>The Complete LIVOFOX Universe</h2>
+        <p>Explore our clothing, footwear and headwear categories.</p>
     </div>
 
-    <!-- Product Showcase Section -->
-    <section id="collection">
-        <div class="section-header">
-            <h2>The Signature Collection</h2>
-            <p>100% Cotton. Precision Crafted in India.</p>
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterItems('all',this)">All Categories</button>
+        <button class="filter-btn" onclick="filterItems('men',this)">Men</button>
+        <button class="filter-btn" onclick="filterItems('women',this)">Women</button>
+        <button class="filter-btn" onclick="filterItems('unisex',this)">Unisex</button>
+        <button class="filter-btn" onclick="filterItems('sports',this)">Sportswear</button>
+        <button class="filter-btn" onclick="filterItems('footwear',this)">Footwear</button>
+        <button class="filter-btn" onclick="filterItems('headwear',this)">Headwear</button>
+        <button class="filter-btn" onclick="filterItems('kids',this)">Kids & Baby</button>
+    </div>
+
+    <div class="catalogue-grid" id="catalogueGrid">
+
+        <!-- MEN -->
+
+        <div class="catalogue-item" data-category="men">
+            <h4>Men's T-Shirts</h4>
+            <p>Classic, polo, crew neck and graphic tees</p>
         </div>
 
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <span class="product-badge">Classic</span>
-                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=700&q=80" alt="Classic Logo Tee">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Classic Logo Tee</h3>
-                    <div class="product-price">₹999.00</div>
-                    <a href="#" class="btn-outline">View Details</a>
-                </div>
-            </div>
+        <div class="catalogue-item" data-category="men">
+            <h4>Men's Shirts</h4>
+            <p>Formal, casual, dress and linen shirts</p>
+        </div>
 
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <span class="product-badge">Minimal</span>
-                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=700&q=80" alt="Minimal Tee">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Minimal Tee</h3>
-                    <div class="product-price">₹999.00</div>
-                    <a href="#" class="btn-outline">View Details</a>
-                </div>
-            </div>
+        <div class="catalogue-item" data-category="men">
+            <h4>Trousers & Jeans</h4>
+            <p>Jeans, chinos, trousers and shorts</p>
+        </div>
 
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <span class="product-badge">Statement</span>
-                    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=700&q=80" alt="Statement Tee">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Statement Tee ("Live Bold")</h3>
-                    <div class="product-price">₹999.00</div>
-                    <a href="#" class="btn-outline">View Details</a>
-                </div>
+        <div class="catalogue-item" data-category="men">
+            <h4>Men's Innerwear</h4>
+            <p>Boxers, trunks, briefs and vests</p>
+        </div>
+
+        <div class="catalogue-item" data-category="men">
+            <h4>Men's Nightwear</h4>
+            <p>Pyjamas, sleepwear and dressing gowns</p>
+        </div>
+
+        <div class="catalogue-item" data-category="men">
+            <h4>Men's Outerwear</h4>
+            <p>Jackets, coats, blazers and overcoats</p>
+        </div>
+
+        <!-- WOMEN -->
+
+        <div class="catalogue-item" data-category="women">
+            <h4>Women's Tops</h4>
+            <p>Blouses, tops, shirts and tunics</p>
+        </div>
+
+        <div class="catalogue-item" data-category="women">
+            <h4>Dresses & Gowns</h4>
+            <p>Casual, formal, evening and party dresses</p>
+        </div>
+
+        <div class="catalogue-item" data-category="women">
+            <h4>Women's Bottomwear</h4>
+            <p>Leggings, skirts, trousers and jeans</p>
+        </div>
+
+        <div class="catalogue-item" data-category="women">
+            <h4>Women's Innerwear</h4>
+            <p>Bras, panties, lingerie and camisoles</p>
+        </div>
+
+        <div class="catalogue-item" data-category="women">
+            <h4>Women's Nightwear</h4>
+            <p>Nightdresses, pyjamas and sleepwear</p>
+        </div>
+
+        <div class="catalogue-item" data-category="women">
+            <h4>Women's Outerwear</h4>
+            <p>Jackets, coats and cardigans</p>
+        </div>
+
+        <div class="catalogue-item" data-category="women">
+            <h4>Swimwear</h4>
+            <p>Swimsuits, bikinis and beachwear</p>
+        </div>
+
+        <!-- UNISEX -->
+
+        <div class="catalogue-item" data-category="unisex">
+            <h4>Hoodies & Sweatshirts</h4>
+            <p>Pullovers, jumpers and sweatshirts</p>
+        </div>
+
+        <div class="catalogue-item" data-category="unisex">
+            <h4>Casual Wear</h4>
+            <p>Everyday essentials and coordinated sets</p>
+        </div>
+
+        <div class="catalogue-item" data-category="unisex">
+            <h4>Denim Collection</h4>
+            <p>Denim jackets, jeans and clothing</p>
+        </div>
+
+        <div class="catalogue-item" data-category="unisex">
+            <h4>Belts & Braces</h4>
+            <p>Clothing belts and suspenders</p>
+        </div>
+
+        <div class="catalogue-item" data-category="unisex">
+            <h4>Socks & Hosiery</h4>
+            <p>Socks, stockings and tights</p>
+        </div>
+
+        <div class="catalogue-item" data-category="unisex">
+            <h4>Scarves & Stoles</h4>
+            <p>Scarves, shawls and neckwear</p>
+        </div>
+
+        <div class="catalogue-item" data-category="unisex">
+            <h4>Gloves & Mittens</h4>
+            <p>Fashion gloves and mittens</p>
+        </div>
+
+        <div class="catalogue-item" data-category="unisex">
+            <h4>Traditional Wear</h4>
+            <p>Kurtas, ethnic outfits and traditional clothing</p>
+        </div>
+
+        <!-- SPORTS -->
+
+        <div class="catalogue-item" data-category="sports">
+            <h4>Sports T-Shirts</h4>
+            <p>Training tees and sports singlets</p>
+        </div>
+
+        <div class="catalogue-item" data-category="sports">
+            <h4>Gym Wear</h4>
+            <p>Gym shorts, leggings and training apparel</p>
+        </div>
+
+        <div class="catalogue-item" data-category="sports">
+            <h4>Running Apparel</h4>
+            <p>Running tops, shorts and tights</p>
+        </div>
+
+        <div class="catalogue-item" data-category="sports">
+            <h4>Yoga Wear</h4>
+            <p>Yoga pants and activewear</p>
+        </div>
+
+        <div class="catalogue-item" data-category="sports">
+            <h4>Cycling Clothing</h4>
+            <p>Cycling jerseys and clothing</p>
+        </div>
+
+        <div class="catalogue-item" data-category="sports">
+            <h4>Sports Uniforms</h4>
+            <p>Team kits and martial arts uniforms</p>
+        </div>
+
+        <div class="catalogue-item" data-category="sports">
+            <h4>Tracksuits</h4>
+            <p>Tracksuits and athletic clothing</p>
+        </div>
+
+        <!-- FOOTWEAR -->
+
+        <div class="catalogue-item" data-category="footwear">
+            <h4>Sneakers</h4>
+            <p>Casual and fashion sneakers</p>
+        </div>
+
+        <div class="catalogue-item" data-category="footwear">
+            <h4>Formal Shoes</h4>
+            <p>Leather shoes and dress footwear</p>
+        </div>
+
+        <div class="catalogue-item" data-category="footwear">
+            <h4>Sports Shoes</h4>
+            <p>Running, gym and training shoes</p>
+        </div>
+
+        <div class="catalogue-item" data-category="footwear">
+            <h4>Boots</h4>
+            <p>Ankle boots and fashion boots</p>
+        </div>
+
+        <div class="catalogue-item" data-category="footwear">
+            <h4>Sandals & Slippers</h4>
+            <p>Slides, sandals and casual slippers</p>
+        </div>
+
+        <div class="catalogue-item" data-category="footwear">
+            <h4>Ethnic Footwear</h4>
+            <p>Traditional shoes and sandals</p>
+        </div>
+
+        <!-- HEADWEAR -->
+
+        <div class="catalogue-item" data-category="headwear">
+            <h4>Caps</h4>
+            <p>Baseball caps and fashion caps</p>
+        </div>
+
+        <div class="catalogue-item" data-category="headwear">
+            <h4>Hats</h4>
+            <p>Fashion hats and sun hats</p>
+        </div>
+
+        <div class="catalogue-item" data-category="headwear">
+            <h4>Beanies</h4>
+            <p>Winter hats and knitted headwear</p>
+        </div>
+
+        <div class="catalogue-item" data-category="headwear">
+            <h4>Headbands</h4>
+            <p>Clothing headbands and bandanas</p>
+        </div>
+
+        <!-- KIDS AND BABY -->
+
+        <div class="catalogue-item" data-category="kids">
+            <h4>Baby Clothing</h4>
+            <p>Baby garments and layettes</p>
+        </div>
+
+        <div class="catalogue-item" data-category="kids">
+            <h4>Kids' Clothing</h4>
+            <p>T-shirts, shirts, dresses and trousers</p>
+        </div>
+
+        <div class="catalogue-item" data-category="kids">
+            <h4>Kids' Footwear</h4>
+            <p>Children's shoes and sandals</p>
+        </div>
+
+        <div class="catalogue-item" data-category="kids">
+            <h4>Kids' Nightwear</h4>
+            <p>Children's pyjamas and sleepwear</p>
+        </div>
+
+        <div class="catalogue-item" data-category="kids">
+            <h4>Baby Bibs</h4>
+            <p>Non-paper clothing bibs</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FEATURED COLLECTION -->
+
+<section class="products">
+
+    <div class="section-heading">
+        <span>Curated For You</span>
+        <h2>Signature Essentials</h2>
+        <p>A glimpse into the LIVOFOX design philosophy.</p>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=85" alt="Premium T-shirt">
+            <div class="product-info">
+                <h3>THE SIGNATURE TEE</h3>
+                <p>Premium Everyday Collection</p>
             </div>
         </div>
-    </section>
 
-    <!-- Brand Story Section -->
-    <section class="story-section" id="story">
-        <div class="story-content">
-            <h2>Our Story</h2>
-            <p>Created for people who value comfort, confidence, and simplicity. Every piece is designed with quality and timeless style in mind.</p>
-            <div class="story-quote">
-                "More than apparel. A mindset. A community. A bolder tomorrow."
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=85" alt="Minimal apparel">
+            <div class="product-info">
+                <h3>THE MINIMAL EDIT</h3>
+                <p>Contemporary Essentials</p>
             </div>
-            <p>Proudly designed and manufactured in India under Stunfox Organization, ensuring precision detailing from inside neck labels down to sustainable packaging elements.</p>
         </div>
-        <div class="story-image"></div>
-    </section>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>LIVOFOX</h4>
-                <p>Live Bold. Premium Apparel crafted for your everyday confidence.</p>
-                <div class="social-icons">
-                    <a href="https://instagram.com/livofox" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#collection">Shop T-Shirts</a></li>
-                    <li><a href="#story">Brand Story</a></li>
-                    <li><a href="#">Support & FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-                <p><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka, India</p>
-                <p><i class="fa-solid fa-envelope"></i> support@livofox.com</p>
-                <p><i class="fa-solid fa-globe"></i> www.livofox.com</p>
-            </div>
-            <div class="footer-col">
-                <h4>Organization</h4>
-                <p>A Brand By:</p>
-                <p><strong>STUNFOX ORGANIZATION</strong></p>
-                <p class="footer-gstin">GSTIN: 29BJEPR8268P1Z1</p>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85" alt="Fashion collection">
+            <div class="product-info">
+                <h3>THE EVERYDAY EDIT</h3>
+                <p>Designed For Modern Living</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 LIVOFOX. All Rights Reserved. | Let's Build A Smarter Tomorrow.</p>
+
+    </div>
+</section>
+
+<!-- BRAND STORY -->
+
+<section class="story" id="story">
+
+    <div class="story-image"></div>
+
+    <div class="story-content">
+        <span>THE LIVOFOX PHILOSOPHY</span>
+
+        <h2>Live Bold.<br>Think Different.</h2>
+
+        <p>
+            LIVOFOX represents a modern approach to fashion.
+            We believe that great style begins with confidence,
+            comfort and attention to detail.
+        </p>
+
+        <p>
+            Our vision is to build an Indian fashion brand
+            with a distinctive identity and a presence
+            across clothing, footwear and headwear.
+        </p>
+
+        <p>
+            Proudly developed in India under
+            STUNFOX ORGANISATION.
+        </p>
+
+        <a href="#categories" class="btn">Explore Our World</a>
+    </div>
+
+</section>
+
+<!-- BRAND VALUES -->
+
+<section class="values">
+
+    <div class="value">
+        <h3>QUALITY FIRST</h3>
+        <p>Attention to detail in every creation.</p>
+    </div>
+
+    <div class="value">
+        <h3>MODERN DESIGN</h3>
+        <p>Contemporary fashion with timeless appeal.</p>
+    </div>
+
+    <div class="value">
+        <h3>MADE IN INDIA</h3>
+        <p>Building an identity with Indian roots.</p>
+    </div>
+
+    <div class="value">
+        <h3>LIVE BOLD</h3>
+        <p>Confidence is always in style.</p>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+        <div class="footer-col">
+            <p class="footer-logo">LIVOFOX</p>
+            <p>LIVE BOLD</p>
+            <p>
+                A contemporary fashion identity
+                created for a new generation.
+            </p>
+
+            <div class="social">
+                <a href="https://instagram.com/livofox" target="_blank" rel="noopener">INSTAGRAM</a>
+                <a href="https://facebook.com/livofox" target="_blank" rel="noopener">FACEBOOK</a>
+            </div>
         </div>
-    </footer>
+
+        <div class="footer-col">
+            <h3>EXPLORE</h3>
+            <a href="#home">Home</a>
+            <a href="#categories">Collections</a>
+            <a href="#class25">Shop All</a>
+            <a href="#story">Our Story</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>COLLECTIONS</h3>
+            <a href="#class25">Men's Fashion</a>
+            <a href="#class25">Women's Fashion</a>
+            <a href="#class25">Innerwear</a>
+            <a href="#class25">Sportswear</a>
+            <a href="#class25">Footwear & Headwear</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>CONTACT</h3>
+            <p>Bengaluru, Karnataka, India</p>
+            <a href="mailto:support@livofox.com">support@livofox.com</a>
+            <a href="https://livofox.com">www.livofox.com</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            A BRAND BY <strong>STUNFOX ORGANISATION</strong>
+        </p>
+        <p>
+            © 2026 LIVOFOX. ALL RIGHTS RESERVED.
+        </p>
+        <p>DESIGNED IN INDIA.</p>
+    </div>
+
+</footer>
+
+<script>
+
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+}
+
+function closeMenu() {
+    document.getElementById('navLinks').classList.remove('open');
+}
+
+function filterItems(category,button) {
+
+    const items = document.querySelectorAll('.catalogue-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    items.forEach(item => {
+
+        if(category === 'all' ||
+           item.dataset.category === category) {
+            item.classList.remove('hidden');
+        } else {
+            item.classList.add('hidden');
+        }
+
+    });
+
+}
+
+</script>
 
 </body>
 </html>
